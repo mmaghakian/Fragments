@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\""
+    "lint": "eslint --config .eslintrc.js \"./src/**/*.js\"",
+    "start": "node src/server.js",
+    "dev": "cross-env LOG_LEVEL=debug nodemon ./src/index.js --watch src",
+    "debug": "cross-env LOG_LEVEL=debug nodemon --inspect=0.0.0.0:9229 ./src/server.js --watch src"
   },
   "repository": {
     "type": "git",
@@ -15,7 +18,8 @@
   "author": "Matthew Maghakian",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3"
   },
   "dependencies": {
     "compression": "^1.7.4",
